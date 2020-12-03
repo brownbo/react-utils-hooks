@@ -1,7 +1,9 @@
 # react-utils-hooks
 react hooks for nomal utils
 ## Installation
+```
 npm install react-utils-hooks
+```
 ## Usage
 ```
 import { useSafeState } from 'react-utils-hooks';
