@@ -1,0 +1,18 @@
+{
+  "name": "react-utils-hooks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "hooks"
+  ],
+  "author": "mrliang",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^17.0.1"
+  }
+}
