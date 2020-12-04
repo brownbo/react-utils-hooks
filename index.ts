@@ -91,3 +91,18 @@ export function useLegacyState<S extends { [key: string]: any }>(
 
   return [state, setLegacyState];
 }
+
+export function useToggler(initialState: boolean) {
+  const [value, setValue] = useState(initialState);
+  const toggleValue = useCallback(() => setValue((prev) => !prev), []);
+  return [value, toggleValue];
+}
+
+export function useWillUnmount(fn: EffectCallback) {
+  useEffect(
+    () => () => {
+      fn();
+    },
+    []
+  );
+}

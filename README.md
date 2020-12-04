@@ -47,5 +47,16 @@ useDidUpdate(()=> {
   //更新逻辑
 },[deps])
 ```
-
-
+### useWillUnmount
+页面卸载前操作、类似componentWillunmount
+```
+useWillUnmount(()=> {
+  //卸载页面之前操作
+})
+```
+### useToggler
+切换状态，常用于show、visible
+```
+const [visible, togglerVisible] = useToggler(false);
+<div onclick={togglerVisible}></div>
+```
