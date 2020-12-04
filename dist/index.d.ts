@@ -8,5 +8,5 @@ export declare function useSafeState<S>(initialState: S | (() => S)): [S, Dispat
 export declare function useLegacyState<S extends {
     [key: string]: any;
 }>(initialState: S | (() => S)): [S, Dispatch<SetStateAction<Partial<S>>>];
-export declare function useToggler(initialState: boolean): (boolean | (() => void))[];
+export declare function useToggler(initialState: boolean): [boolean, () => void];
 export declare function useWillUnmount(fn: EffectCallback): void;

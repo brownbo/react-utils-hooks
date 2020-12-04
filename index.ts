@@ -92,7 +92,7 @@ export function useLegacyState<S extends { [key: string]: any }>(
   return [state, setLegacyState];
 }
 
-export function useToggler(initialState: boolean) {
+export function useToggler(initialState: boolean): [boolean, () => void] {
   const [value, setValue] = useState(initialState);
   const toggleValue = useCallback(() => setValue((prev) => !prev), []);
   return [value, toggleValue];
