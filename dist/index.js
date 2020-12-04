@@ -11,7 +11,7 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.useLegacyState = exports.useSafeState = exports.useDidUpdate = exports.useWillMount = exports.useDidMount = exports.useIsMounted = exports.usePrevious = void 0;
+exports.useWillUnmount = exports.useToggler = exports.useLegacyState = exports.useSafeState = exports.useDidUpdate = exports.useWillMount = exports.useDidMount = exports.useIsMounted = exports.usePrevious = void 0;
 var react_1 = require("react");
 var lodash_1 = require("lodash");
 function usePrevious(value) {
@@ -84,3 +84,15 @@ function useLegacyState(initialState) {
     return [state, setLegacyState];
 }
 exports.useLegacyState = useLegacyState;
+function useToggler(initialState) {
+    var _a = react_1.useState(initialState), value = _a[0], setValue = _a[1];
+    var toggleValue = react_1.useCallback(function () { return setValue(function (prev) { return !prev; }); }, []);
+    return [value, toggleValue];
+}
+exports.useToggler = useToggler;
+function useWillUnmount(fn) {
+    react_1.useEffect(function () { return function () {
+        fn();
+    }; }, []);
+}
+exports.useWillUnmount = useWillUnmount;
